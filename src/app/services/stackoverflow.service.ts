@@ -1,28 +1,27 @@
 import { Injectable } from '@angular/core';
 import {Http, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
+import {setupTestingRouter} from "@angular/router/testing";
 
 @Injectable()
 export class StackoverflowService {
 
-    items:any [] = [];
+    items: any [] = [];
 
-  urlBusqueda:string = 'https://api.stackexchange.com/2.2/questions?order=desc&sort=activity&site=stackoverflow';
+    urlBusqueda: string = 'https://api.stackexchange.com/2.2/questions?order=desc&sort=activity&site=magento';
 
-  constructor(private http: Http) { }
+    constructor(private http: Http) {
+    }
 
-  getSearch( termino: string ) {
+    getSearch(termino: string) {
 
-    let headers = new Headers();
-    let url = this.urlBusqueda;
+        let headers = new Headers();
+        let url = this.urlBusqueda;
 
-    return this.http.get( url, {headers} )
-              .map( res => {
-                  this.items = res.json().items;
-                  return this.items
-              })
-  }
-
-
-
+        return this.http.get(url, {headers})
+            .map(res => {
+                this.items = res.json().items;
+                return this.items
+            })
+    }
 }

@@ -15,6 +15,7 @@ import { DiscussionComponent } from './components/discussion/discussion.componen
 import { StackoverflowService } from './services/stackoverflow.service';
 
 import { CapitalizadoPipe } from './pipes/capitalizado.pipe';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { CapitalizadoPipe } from './pipes/capitalizado.pipe';
     HomeComponent,
     FooterComponent,
     DiscussionComponent,
-    CapitalizadoPipe
+    CapitalizadoPipe,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
