@@ -1,0 +1,50 @@
+
+
+<section class="bg-primary" id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="section-heading text-white">Discussions :)</h2>
+        <hr class="light">
+        <p class="text-faded">
+          Start Bootstrap has everything you need to get your new website up and running in no
+          time! All of the templates and themes on Start Bootstrap are open source. Hard go pro.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- load -->
+<div *ngIf="!discussions" style="margin-top:50px;color:#ddd;font-size:14px;margin-bottom:70px" class="text-center container animated fadeIn" >
+  <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+  <span class="sr-only">Loading...</span>
+</div>
+
+<!-- end load -->
+<div class="animated slideInUp container" *ngIf="discussions">
+
+  <table class="table table-striped" style="margin-top:50px">
+    <thead>
+    <tr>
+      <th></th>
+      <th>Question</th>
+      <th>#Tags</th>
+      <th>View</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of discussions; let i = index">
+      <th scope="row">
+        <img class="card-img-top" src="{{item.owner.profile_image}}" alt="Card image cap" style="width:34px">
+      </th>
+      <td>{{item.title}}</td>
+      <td><span *ngFor="let tag of item.tags; let i = index">#{{tag | capitalizado}}</span></td>
+      <td><a href="{{item.link}}" target="_blank">View</a></td>
+    </tr>
+
+    </tbody>
+  </table>
+
+
+</div>
