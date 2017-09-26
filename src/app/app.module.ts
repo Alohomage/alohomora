@@ -13,6 +13,7 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { DiscussionComponent } from './components/discussion/discussion.component';
 
 import { StackoverflowService } from './services/stackoverflow.service';
+import { NavbarService } from './services/navbar.service';
 
 import { CapitalizadoPipe } from './pipes/capitalizado.pipe';
 import { LoginComponent } from './components/login/login.component';
@@ -35,7 +36,8 @@ import { LoginComponent } from './components/login/login.component';
     APP_ROUTING
   ],
   providers: [
-    StackoverflowService
+    StackoverflowService,
+    NavbarService
   ],
   bootstrap: [AppComponent]
 })
