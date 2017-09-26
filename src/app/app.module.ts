@@ -14,6 +14,7 @@ import { DiscussionComponent } from './components/discussion/discussion.componen
 
 import { StackoverflowService } from './services/stackoverflow.service';
 import { NavbarService } from './services/navbar.service';
+import { UsersService } from './services/users.service';
 
 import { CapitalizadoPipe } from './pipes/capitalizado.pipe';
 import { LoginComponent } from './components/login/login.component';
@@ -37,7 +38,8 @@ import { LoginComponent } from './components/login/login.component';
   ],
   providers: [
     StackoverflowService,
-    NavbarService
+    NavbarService,
+    UsersService
   ],
   bootstrap: [AppComponent]
 })

@@ -18,12 +18,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
+Route::group(['middleware' => ['cors']], function() {
+    Route::get('users','UsersController@index');
+    Route::get('users/{id}','UsersController@show');
+});
 
 
 // get list of tasks
-Route::get('users','UsersController@index');
 // get specific task
-Route::get('users/{id}','UsersController@show');
 // delete a task
 //Route::delete('users/{id}','UsersController@destroy');
 // update existing task
