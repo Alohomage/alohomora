@@ -21,6 +21,7 @@ import { AuthenticationService } from './services/authentication.service';
 
 import { CapitalizadoPipe } from './pipes/capitalizado.pipe';
 import { LoginComponent } from './components/login/login.component';
+import { AlertComponent } from './components/alert/alert.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { LoginComponent } from './components/login/login.component';
     FooterComponent,
     DiscussionComponent,
     CapitalizadoPipe,
-    LoginComponent
+    LoginComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,

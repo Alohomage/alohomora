@@ -36,12 +36,20 @@ export class LoginComponent implements OnInit {
         this.authenticationService.login(this.model.email, this.model.password)
             .subscribe(
                 data => {
-                    this.router.navigate([this.returnUrl]);
+                    if (data.error) {
+                        this.alertService.error(data.error);
+                    } else {
+                        this.router.navigate([this.returnUrl]);
+                        this.alertService.success('Login successful.');
+                    }
                 },
                 error => {
                     this.alertService.error(error);
                     this.loading = false;
                 });
+        this.loading = false;
+
+
     }
 
 }
