@@ -13,7 +13,7 @@ export class AuthenticationService {
 
     login(email: string, password: string) {
 
-        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let headers = new Headers({'Content-Type': 'application/json'});
         let options = new RequestOptions({ headers: headers });
         let body = JSON.stringify({ email: email, password: password });
         return this.http.post(this.endpoint, body, options)

@@ -46,6 +46,12 @@ class UserController extends Controller
         return response()->json(compact('token'));
     }
 
+    public function get(Request $request)
+    {
+        $user = JWTAuth::toUser($request->token);
+        return response()->json(['result' => $user]);
+    }
+
 
     public function show($id)
     {
@@ -58,7 +64,7 @@ class UserController extends Controller
         return $this->response->withItem($task, new  UsersTransformer());
     }
 
-    public function get($id)
+    /*public function get($id)
     {
         //Get the task
         $task = User::find($id);
@@ -67,7 +73,7 @@ class UserController extends Controller
         }
         // Return a single task
         return $this->response->withItem($task, new  UsersTransformer());
-    }
+    }*/
 
     public function destroy($id)
     {
