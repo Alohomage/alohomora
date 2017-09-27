@@ -21,6 +21,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['middleware' => ['cors']], function() {
     Route::get('users','UsersController@index');
     Route::get('users/{id}','UsersController@show');
+    Route::post('authenticate','UserController@authenticate');
+
+});
+
+Route::group(['middleware' => 'jwt.auth'], function () {
+    Route::post('get/{id}', 'UsersController@get');
 });
 
 
